@@ -1,11 +1,12 @@
 require_relative 'person'
 
 class Student < Person
-  attr_reader :classroom
+  attr_reader :classroom, :title
 
-  def initialize(classroom1, age, name = 'unknown', parent_permmission: true)
-    super(age, name, parent_permmission)
-    @classroom = classroom(classroom1)
+  def initialize(classroom:, age:, name: 'unknown', parent_permission: true)
+    super(age: age, name: name, parent_permission: parent_permission)
+    @classroom = classroom
+    @title = 'Student'
   end
 
   def play_hooky
