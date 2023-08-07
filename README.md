@@ -93,6 +93,12 @@ To get a local copy of this project up and running, follow these steps.
 - Twitter: [@akezeth](https://twitter.com/akezeth)
 - LinkedIn: [Aklilu Mekonnen](https://www.linkedin.com/in/aklilu-mekonnen/)
 
+👤 **Okolo Oshoke**
+
+- GitHub: [@lorenzoworx](https://github.com/lorenzoworx)
+- Twitter: [@lorenzoworx](https://twitter.com/lorenzoworx)
+- LinkedIn: [Oshoke Okolo](https://www.linkedin.com/in/oshokeokolo/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
