@@ -3,9 +3,26 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'classroom'
 require_relative 'rental'
+require_relative 'list_books'
+require_relative 'list_persons'
+require_relative 'create_person'
+require_relative 'create_student'
+require_relative 'create_teacher'
+require_relative 'create_book'
+require_relative 'create_rental'
+require_relative 'list_rentals'
 
 class App
   attr_accessor :books, :students, :teachers, :rental
+
+  include ListBook
+  include ListPersons
+  include CreatePerson
+  include CreateStudent
+  include CreateTeacher
+  include CreateBook
+  include CreateRental
+  include ListRentals
 
   def initialize
     @persons = []
@@ -13,34 +30,23 @@ class App
     @rentals = []
   end
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-  def list_all_rentals_of_person
-    print 'ID of person: '
-    person_id = gets.chomp.to_i
-    person_data = @rentals.select { |rental| rental.person.id == person_id }
-
-    if person_data.empty?
-      puts "Currently, there are no rented books in the system for the person with #{person_id} id"
+  def run(option)
+    case option
+    when 1
+      list_all_books
+    when 2
+      list_all_persons
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      list_all_rentals_of_person
     else
-      puts 'Rentals: '
-      person_data.each do |rental|
-        puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by \"#{rental.book.author}\""
-      end
+      puts 'Thank you for using this app!'
+      exit
     end
-  end
-
-  def run
-    app_intro
   end
 end
