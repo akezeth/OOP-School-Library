@@ -8,19 +8,17 @@
 
 # 📗 Table of Contents
 
-- [📨 School Library](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📨School Library](#school-library)
+- [📗 Table of Contents](#-table-of-contents)
+- [📨 School Library ](#-school-library-)
+  - [🛠 Built With ](#-built-with-)
+  - [💻 Getting Started ](#-getting-started-)
+  - [👥 Author(s) ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <div align="center"><hr width="250px"/></div>
 

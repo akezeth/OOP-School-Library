@@ -17,49 +17,11 @@ class App
 
   
 
-  def create_person
-    print 'Do you want to create a student(1) or a teacher(2)? [Input the number]: '
-    person_type = gets.chomp.to_i
-    until person_type.between?(1, 2)
-      puts 'Invalid input. Please enter the correct number [1/2]: '
-      person_type = gets.chomp.to_i
-    end
+  
 
-    if person_type == 1
-      create_student
-    else
-      create_teacher
-    end
-  end
+  
 
-  def create_student
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.upcase
-    until parent_permission.eql?('Y') || parent_permission.eql?('N')
-      print 'Invalid input. Please enter the correct option [Y/N]: '
-      parent_permission = gets.chomp.upcase
-    end
-    p_permission = parent_permission == 'Y'
-    student = Student.new(classroom: 'classroom', age: age, name: name, parent_permission: p_permission)
-    @persons << student
-    puts 'Student created successfully'
-  end
-
-  def create_teacher
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
-    teacher = Teacher.new(specialization: specialization, age: age, name: name)
-    @persons << teacher
-    puts 'Teacher created successfully'
-  end
+  
 
   def create_book
     print 'Title: '
