@@ -13,25 +13,9 @@ class App
     @rentals = []
   end
 
-  def list_all_books
-    if @books.empty?
-      puts "Currently, we don't have any book in the library."
-    else
-      @books.each_with_index do |book, index|
-        puts "#{index + 1}) Title: \"#{book.title}\" Author: \"#{book.author}\""
-      end
-    end
-  end
+  
 
-  def list_all_persons
-    if @persons.empty?
-      puts "Currently, we don't have any person"
-    else
-      @persons.each_with_index do |person, index|
-        puts "#{index + 1}) [#{person.title}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      end
-    end
-  end
+  
 
   def create_person
     print 'Do you want to create a student(1) or a teacher(2)? [Input the number]: '
