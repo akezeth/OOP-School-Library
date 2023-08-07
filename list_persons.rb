@@ -1,6 +1,6 @@
-require_relative 'person'
+require_relative 'app'
 
-module listPersons
+module ListPersons
   def list_all_persons
     if @persons.empty?
       puts "Currently, we don't have any person"

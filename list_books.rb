@@ -1,6 +1,6 @@
-require './book'
+require_relative 'app'
 
-module listBook
+module ListBook
   def list_all_books
     if @books.empty?
       puts "Currently, we don't have any book in the library."

@@ -1,4 +1,5 @@
 require_relative 'teacher'
+require_relative 'app'
 
 module CreateTeacher
   def create_teacher
@@ -12,4 +13,4 @@ module CreateTeacher
     @persons << teacher
     puts 'Teacher created successfully'
   end
-end  
+end

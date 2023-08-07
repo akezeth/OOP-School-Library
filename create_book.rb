@@ -1,4 +1,5 @@
 require_relative 'book'
+require_relative 'app'
 
 module CreateBook
   def create_book

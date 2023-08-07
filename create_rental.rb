@@ -1,7 +1,7 @@
 require_relative 'rental'
+require_relative 'app'
 
 module CreateRental
-  
   def create_rental
     puts 'Select a book from the following list by number'
     list_all_books
