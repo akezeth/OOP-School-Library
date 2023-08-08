@@ -7,7 +7,7 @@ require_relative 'rental'
 module LoadData
   BOOKS_FILE_NAME = './books.json'.freeze
   PEOPLE_FILE_NAME = './people.json'.freeze
-  
+  RENTALS_FILE_NAME = './rentals.json'.freeze
 
   def load_books
     books_list = []
@@ -38,6 +38,18 @@ module LoadData
     end
   end
 
-end
+  def load_rentals
+    rentals_list = []
+    return rentals_list unless File.exist?(RENTALS_FILE_NAME)
 
+    rentals_list = load_data_from_file(RENTALS_FILE_NAME)
+    rentals_list.each do |rental|
+      book = Book.new(rental['book']['title'], rental['book']['author'])
+      person = create_rental_person(rental['person'])
+      @rentals << Rental.new(rental['date'], book, person)
+    end
+  end
+
+  
+end
   
