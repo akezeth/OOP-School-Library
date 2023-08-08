@@ -1,5 +1,4 @@
-require_relative 'create_student'
-require_relative 'create_teacher'
+require_relative 'person_type_selector'
 
 module CreatePerson
   def create_person
@@ -9,11 +8,6 @@ module CreatePerson
       puts 'Invalid input. Please enter the correct number [1/2]: '
       person_type = gets.chomp.to_i
     end
-
-    if person_type == 1
-      create_student
-    else
-      create_teacher
-    end
+    person_type_selector(person_type)
   end
 end
