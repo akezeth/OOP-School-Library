@@ -50,6 +50,18 @@ module LoadData
     end
   end
 
+  def create_rental_person(person)
+    if person['title'] == 'Student'
+      student = Student.new(Classroom.new(person['classroom']), person['age'], person['name'], parent_permission: person['parent_permission'])
+      student.id = person['id'].to_i
+      student
+    else
+      teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+      teacher.id = person['id'].to_i
+      teacher
+    end
+  end
+  
   
 end
   
