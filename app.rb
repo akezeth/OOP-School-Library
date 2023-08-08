@@ -6,6 +6,7 @@ require_relative 'rental'
 require_relative 'list_books'
 require_relative 'list_persons'
 require_relative 'create_person'
+require_relative 'person_type_selector'
 require_relative 'create_student'
 require_relative 'create_teacher'
 require_relative 'create_book'
@@ -18,6 +19,7 @@ class App
   include ListBook
   include ListPersons
   include CreatePerson
+  include PersonTypeSelector
   include CreateStudent
   include CreateTeacher
   include CreateBook
