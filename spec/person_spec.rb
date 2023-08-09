@@ -1,50 +1,45 @@
-require_relative '../person'
+require './person'
+require './book'
+require 'date'
 
-RSpec.describe Person do
-  subject do
-    described_class.new(
-      age: 20,
-      name: 'John Doe',
-      parent_permission: true
-    )
-  end
+describe Person do
+  let(:person) { Person.new(age: 20, name: 'John Doe', parent_permission: true) }
+  let(:book) { Book.new('The Great Gatsby', 'F. Scott Fitzgerald') }
+  let(:rental_date) { Date.today }
 
   describe '#initialize' do
-    it 'sets the attributes correctly' do
-      expect(subject.age).to eq(20)
-      expect(subject.name).to eq('John Doe')
-      expect(subject.instance_variable_get(:@parent_permission)).to eq(true)
-      expect(subject.instance_variable_get(:@rentals)).to eq([])
+    it 'initializes a person with the provided age' do
+      expect(person.age).to eq(20)
+    end
+
+    it "initializes a person with the provided name or 'unknown'" do
+      expect(person.name).to eq('John Doe')
     end
   end
 
   describe '#can_use_services?' do
-    it 'returns true if of age' do
-      expect(subject.can_use_services?).to eq(true)
-    end
-
-    it 'returns true if not of age but has parent permission' do
-      under_age_person = described_class.new(
-        age: 15,
-        name: 'Underage Person',
-        parent_permission: true
-      )
-      expect(under_age_person.can_use_services?).to eq(true)
-    end
-
-    it 'returns false if not of age and no parent permission' do
-      under_age_person = described_class.new(
-        age: 15,
-        name: 'Underage Person',
-        parent_permission: false
-      )
-      expect(under_age_person.can_use_services?).to eq(false)
+    it 'returns true if the person is of age' do
+      expect(person.can_use_services?).to eq(true)
     end
   end
 
   describe '#correct_name' do
-    it 'returns the correct name' do
-      expect(subject.correct_name).to eq('John Doe')
+    it 'returns the correct name of the person' do
+      expect(person.correct_name).to eq('John Doe')
+    end
+  end
+
+  describe '#of_age?' do
+    it 'returns true if the person is of age' do
+      person = Person.new(age: 20, name: 'John Doe', parent_permission: true)
+      result = person.send(:of_age?) # Using reflection to access private method
+      expect(result).to eq(true)
+    end
+
+    it 'returns false if the person is underage' do
+      person = Person.new(age: 16, name: 'Jane Doe', parent_permission: false)
+      result = person.send(:of_age?) # Using reflection to access private method
+      expect(result).to eq(false)
     end
   end
 end

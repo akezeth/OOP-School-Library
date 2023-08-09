@@ -1,4 +1,4 @@
-require_relative 'person_type_selector'
+require_relative '../person'
 
 module CreatePerson
   def create_person
