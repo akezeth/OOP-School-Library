@@ -2,7 +2,7 @@ require 'date'
 require_relative '../book'
 
 RSpec.describe Book do
- book = Book.new('A song of ice and fire', 'George R. R. Martin')
+  book = Book.new('A song of ice and fire', 'George R. R. Martin')
   describe 'initialize' do
     it 'creates a new book' do
       expect(book.title).to eq('A song of ice and fire')
@@ -19,4 +19,4 @@ RSpec.describe Book do
       expect(rental.date).to eq(Date.today)
     end
   end
-end 
+end
