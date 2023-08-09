@@ -1,6 +1,5 @@
-
-require_relative '../student.rb'
-require_relative '../person.rb'
+require_relative '../student'
+require_relative '../person'
 
 RSpec.describe Student do
   let(:classroom) { double('Classroom', students: []) }

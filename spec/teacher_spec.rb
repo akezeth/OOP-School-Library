@@ -1,5 +1,5 @@
-require_relative '../teacher.rb'
-require_relative '../person.rb'  
+require_relative '../teacher'
+require_relative '../person'
 
 RSpec.describe Teacher do
   subject do
@@ -10,8 +10,8 @@ RSpec.describe Teacher do
     )
   end
 
-  describe "#initialize" do
-    it "sets the attributes correctly" do
+  describe '#initialize' do
+    it 'sets the attributes correctly' do
       expect(subject.age).to eq(30)
       expect(subject.name).to eq('Jane Smith')
       expect(subject.instance_variable_get(:@parent_permission)).to eq(true)
@@ -20,9 +20,9 @@ RSpec.describe Teacher do
     end
   end
 
-  describe "#can_use_services?" do
-    it "returns true" do
+  describe '#can_use_services?' do
+    it 'returns true' do
       expect(subject.can_use_services?).to eq(true)
     end
-  end  
+  end
 end
